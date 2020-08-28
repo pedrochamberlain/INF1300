@@ -7,6 +7,19 @@ Practical grasp of fundamental concepts regarding the Dart programming language 
 ## What is Flutter?
 Flutter is Google’s portable UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
 
+Flutter includes a modern reactive framework and a fast 2D rendering engine. With Flutter's reactive framework, a View is built as an imutable tree of widgets. 
+
+### Widgets
+Widgets are the foundation of Flutter apps. They are built using a modern framework that take an inspiration from [React](https://github.com/pedrochamberlain/react-topic-path). The central idea is that Flutter's UI is composed exclusively by them.
+
+![](https://gblobscdn.gitbook.com/assets%2F-LanYWbVFl837-fblbH8%2F-LiFm-Sr9OsLQFZjpJy3%2F-LiFm5eKD6Kxk4ghWuw5%2Fstate-management-explainer-5495afe6c3d6162f145107fe45794583bc4f2b55be377c76a92ab210be74c033.gif?alt=media&token=400ab588-1304-41cc-ab60-78ffe95134ba)
+
+Widgets describe what their view should look like given their current configuration and state. When a widget’s state changes, the widget rebuilds its description, which the framework diffs against the previous description in order to determine the minimal changes needed in the underlying render tree to transition from one state to the next.
+
+There are both Stateless and Stateful widgets. A `StatelessWidget` is an immutable widget. All its fields are final after creation. A `StatefulWidget` is a widget that creates a State object. Developers familiar with React will notice familiar concepts derived from Functional and Class components.
+
+Flutter comes with built-in customizable widgets that you can browse through in [Flutter's Official Widget Catalog](https://flutter.dev/docs/development/ui/widgets).
+
 ## Dart
 Flutter is written in Dart. A terse, strongly-typed, object-oriented language. It's similar in syntax with programming languages like Swift, C#, Java and JavaScript. You can test Dart on [DartPad](https://dartpad.dev/).
 
