@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+Widget helloRectangle() {
+  return Container(
+    color: Colors.redAccent,
+  );
+}
+
 void main() {
   runApp(
     MaterialApp(
@@ -8,9 +14,7 @@ void main() {
         appBar: AppBar(
           title: Text('Hello Rectangle'),
         ),
-        body: Container(
-          color: Colors.redAccent,
-        ),
+        body: helloRectangle(),
       ),
     ),
   );
