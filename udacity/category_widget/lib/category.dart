@@ -36,24 +36,29 @@ class Category extends StatelessWidget {
       child: Container(
         height: 100.0,
         child: InkWell(
+          highlightColor: color,
+          splashColor: color,
+          onTap: () => print('I was tapped!'),
           child: Padding(
             padding: EdgeInsets.all(8.0),
-            child: Row(children: [
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Icon(
-                  iconLocation,
-                  size: 60.0,
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Icon(
+                    iconLocation,
+                    size: 60.0,
+                  ),
                 ),
-              ),
-              Center(
-                child: Text(
-                  name,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              )
-            ]),
+                Center(
+                  child: Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
