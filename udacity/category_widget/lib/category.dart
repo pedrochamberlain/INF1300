@@ -33,15 +33,18 @@ class Category extends StatelessWidget {
   // See https://docs.flutter.io/flutter/material/Theme-class.html
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent,
       child: Container(
         height: 100.0,
         child: InkWell(
+          borderRadius: BorderRadius.circular(50.0),
           highlightColor: color,
           splashColor: color,
           onTap: () => print('I was tapped!'),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
                   padding: EdgeInsets.all(16.0),
