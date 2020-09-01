@@ -32,7 +32,31 @@ class Category extends StatelessWidget {
   // Theme ancestor in the tree. Below, we obtain the display1 text theme.
   // See https://docs.flutter.io/flutter/material/Theme-class.html
   Widget build(BuildContext context) {
-    // TODO: Build the custom widget here, referring to the Specs.
-    return Container();
+    return Material(
+      child: Container(
+        height: 100.0,
+        child: InkWell(
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(children: [
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Icon(
+                  iconLocation,
+                  size: 60.0,
+                ),
+              ),
+              Center(
+                child: Text(
+                  name,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              )
+            ]),
+          ),
+        ),
+      ),
+    );
   }
 }
