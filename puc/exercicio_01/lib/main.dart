@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pair.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,13 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Card(
-        child: Column(
-          children: <Widget>[
-            Image.asset('assets/burger.jpg'),
-            Text('Hamburguer'),
-          ],
-        ),
+      body: Pair(
+        imgFile: 'assets/burger.jpg',
+        title: 'Hamburger',
       ),
     );
   }
