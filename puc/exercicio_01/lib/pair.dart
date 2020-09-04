@@ -17,7 +17,9 @@ class Pair extends StatelessWidget {
     return Card(
       child: Column(
         children: [
-          Image.asset(imgFile),
+          Image(
+            image: AssetImage(imgFile),
+          ),
           Text(title),
         ],
       ),

@@ -42,7 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
           Pair(
             imgFile: 'assets/burger.jpg',
             title: 'Hamburger',
-          )
+          ),
+          Pair(
+            imgFile: 'assets/pizza.jpg',
+            title: 'Pizza',
+          ),
+          Pair(
+            imgFile: 'assets/lamen.jpg',
+            title: 'Comida Japonesa',
+          ),
         ],
       ),
     );
