@@ -37,9 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Pair(
-        imgFile: 'assets/burger.jpg',
-        title: 'Hamburger',
+      body: ListView(
+        children: <Widget>[
+          Pair(
+            imgFile: 'assets/burger.jpg',
+            title: 'Hamburger',
+          )
+        ],
       ),
     );
   }
