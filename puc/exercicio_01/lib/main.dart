@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             Image.asset('assets/burger.jpg'),
-            Text('Hamburguer')
+            Text('Hamburguer'),
           ],
         ),
       ),
