@@ -4,9 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-// TODO: Check if we need to import anything
-
-// TODO: Define any constants
+final _backgroundColor = Colors.green[100];
 
 /// Category Route (screen).
 ///
@@ -49,8 +47,16 @@ class CategoryRoute extends StatelessWidget {
     // TODO: Create a list view of the Categories
     final listView = Container();
 
-    // TODO: Create an App Bar
-    final appBar = AppBar();
+    final appBar = AppBar(
+      elevation: 0.0,
+      title: Text(
+        'Unit Converter',
+        style: TextStyle(
+          fontSize: 30.0,
+        ),
+      ),
+      backgroundColor: _backgroundColor,
+    );
 
     return Scaffold(
       appBar: appBar,
