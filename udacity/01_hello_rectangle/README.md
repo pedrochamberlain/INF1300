@@ -1,16 +1,18 @@
-# hello_rectangle
+# Build a Hello Rectangle App
 
-A new Flutter project.
+## Goals
+ - Verify you've set up Android Studio.
+ - Verify that the Flutter plugin has been installed.
+ - Run an app!
 
-## Getting Started
+## Steps
+ 1. Create an app. You can do this using `flutter create hello_rectangle` from the command line, or by going to File -> New -> New Flutter Project.
+ 2. Delete the contents of your app's `lib/main.dart`.
+ 3. Paste in the code from [lib/main.dart](lib/main.dart) into your app's `lib/main.dart`.
+ 4. Open your device or emulator, and build and launch the app. You can do all this using the green Play button in Android Studio. From the command line, you can also do `flutter run` inside your app's project directory.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Specs
+ - App has a title.
+ - App Bar has a title.
+ - Colored rectangle is centered in the app.
+ - Text is centered in the Container widget, and center-aligned.
