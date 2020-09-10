@@ -51,8 +51,6 @@ class _CategoryRouteState extends State<CategoryRoute> {
   @override
   void initState() {
     super.initState();
-    final _categories = <Category>[];
-
     for (var i = 0; i < _categoryNames.length; i++) {
       _categories.add(Category(
         name: _categoryNames[i],

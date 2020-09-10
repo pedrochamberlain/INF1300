@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-import 'package:task_05_stateful_widgets/unit.dart';
+import 'unit.dart';
 
 /// Converter screen where users can input amounts to convert.
 ///
@@ -44,11 +44,11 @@ class _ConverterRouteState extends State<ConverterRoute> {
           children: <Widget>[
             Text(
               unit.name,
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headline,
             ),
             Text(
               'Conversion: ${unit.conversion}',
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.subhead,
             ),
           ],
         ),

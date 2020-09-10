@@ -54,7 +54,7 @@ class Category extends StatelessWidget {
             elevation: 1.0,
             title: Text(
               name,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.display1,
             ),
             centerTitle: true,
             backgroundColor: color,
@@ -98,17 +98,16 @@ class Category extends StatelessWidget {
               // See https://www.dartlang.org/guides/language/effective-dart/usage#do-use-collection-literals-when-possible
               children: [
                 Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Icon(
-                    iconLocation,
-                    size: 60.0,
-                  ),
-                ),
+                    padding: EdgeInsets.all(16.0),
+                    child: Icon(
+                      iconLocation,
+                      size: 60.0,
+                    )),
                 Center(
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headline,
                   ),
                 ),
               ],
