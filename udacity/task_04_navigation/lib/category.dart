@@ -46,9 +46,9 @@ class Category extends StatelessWidget {
         super(key: key);
 
   /// Navigates to the [ConverterRoute].
-  void _navigateToConverter(BuildContext context) {
-    // TODO: Using the Navigator, navigate to the [ConverterRoute]
-  }
+  // void _navigateToConverter(BuildContext context) {
+  // TODO: Using the Navigator, navigate to the [ConverterRoute]
+  // }
 
   /// Builds a custom widget that shows [Category] information.
   ///
@@ -69,9 +69,9 @@ class Category extends StatelessWidget {
           splashColor: color,
           // We can use either the () => function() or the () { function(); }
           // syntax.
-          // TODO: Update this onTap property to call _navigateToConverter()
           onTap: () {
             print('I was tapped!');
+            // navigateToConverter(context)
           },
           child: Padding(
             padding: EdgeInsets.all(8.0),
@@ -93,7 +93,7 @@ class Category extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
               ],

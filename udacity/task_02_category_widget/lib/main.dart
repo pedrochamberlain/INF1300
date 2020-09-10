@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:category_widget/category.dart';
+import 'category.dart';
 
 const _categoryName = 'Cake';
 const _categoryIcon = Icons.cake;
