@@ -58,6 +58,7 @@ The use of [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=
 - [Flutter/Dart API Docs](https://api.flutter.dev/)
 - [Flutter's Rendering Pipeline](https://api.flutter.dev/)
 - [Awesome Flutter](https://github.com/Solido/awesome-flutter)
+- [Flutter Course (Udemy)](https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/)
 - [Free Course on Flutter (Udacity)](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 - [Class Exercises](https://bitbucket.org/endler/workspace/projects/FLUT)
 - [Start Flutter - Free Flutter Themes](https://startflutter.com/)
