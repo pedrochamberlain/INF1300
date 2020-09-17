@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 const _mainColor = Colors.lightGreen;
@@ -6,7 +8,23 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String _currentPhrase = "Clique abaixo para gerar uma frase!";
+  final _phrases = [
+    'Deve ocorrer, a partir de um ponto, uma transformação. Se não ocorre, não há arte - Robert Bresson',
+    'A memória da humanidade para o sofrimento passado é surpreendentemente curta. Sua imaginação para o sofrimento futuro é ainda menor. É contra esta insensibilidade que devemos lutar. Porque a humanidade está ameaçada pelas guerras daqueles que pereceram no passado sob tentativas miseráveis, que, sem dúvida, se repetirão, se as mãos de quem as tornou públicas não forem esmagadas. - Bertolt Brecht'
+  ];
+
+  void _generatePhrase() {
+    var _randomIndex = new Random().nextInt(_phrases.length);
+    setState(() => _currentPhrase = _phrases[_randomIndex]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +42,7 @@ class MyApp extends StatelessWidget {
               children: <Widget>[
                 Image.asset('assets/logo.png'),
                 Text(
-                  'Clique abaixo para gerar uma frase!',
+                  "$_currentPhrase",
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 17,
@@ -34,7 +52,7 @@ class MyApp extends StatelessWidget {
                 ),
                 RaisedButton(
                   child: Text(
-                    "Nova frase",
+                    "Nova Frase",
                     style: TextStyle(
                       fontSize: 17,
                       color: Colors.white,
@@ -42,7 +60,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   color: _mainColor,
-                  onPressed: () => {},
+                  onPressed: _generatePhrase,
                 ),
               ],
             ),
