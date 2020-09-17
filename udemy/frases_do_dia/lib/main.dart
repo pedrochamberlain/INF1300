@@ -9,7 +9,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Frases do Dia',
-      home: Container(color: Colors.white),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Frases do Dia'),
+          backgroundColor: Colors.lightGreen,
+        ),
+        body: Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: <Widget>[],
+          ),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
