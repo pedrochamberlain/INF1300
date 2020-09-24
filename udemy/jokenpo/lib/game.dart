@@ -27,6 +27,26 @@ class _GameState extends State<Game> {
                 ),
               ),
             ),
+            Image.asset('images/padrao.png'),
+            Padding(
+              padding: EdgeInsets.only(top: 32, bottom: 16),
+              child: Text(
+                'Escolha uma das opções abaixo:',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset('images/pedra.png', height: 100),
+                Image.asset('images/papel.png', height: 100),
+                Image.asset('images/tesoura.png', height: 100),
+              ],
+            )
           ],
         ),
       ),
