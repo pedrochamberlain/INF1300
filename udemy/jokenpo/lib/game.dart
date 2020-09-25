@@ -6,6 +6,12 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {
+  var _randomImg = AssetImage('images/padrao.png');
+
+  _selectOption(String choice) {
+    print('User chose: $choice');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +33,7 @@ class _GameState extends State<Game> {
                 ),
               ),
             ),
-            Image.asset('images/padrao.png'),
+            Image(image: this._randomImg),
             Padding(
               padding: EdgeInsets.only(top: 32, bottom: 16),
               child: Text(
@@ -41,10 +47,19 @@ class _GameState extends State<Game> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('images/pedra.png', height: 100),
-                Image.asset('images/papel.png', height: 100),
-                Image.asset('images/tesoura.png', height: 100),
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () => this._selectOption('pedra'),
+                  child: Image.asset('images/pedra.png', height: 100),
+                ),
+                GestureDetector(
+                  onTap: () => this._selectOption('papel'),
+                  child: Image.asset('images/papel.png', height: 100),
+                ),
+                GestureDetector(
+                  onTap: () => this._selectOption('tesoura'),
+                  child: Image.asset('images/tesoura.png', height: 100),
+                ),
               ],
             )
           ],
