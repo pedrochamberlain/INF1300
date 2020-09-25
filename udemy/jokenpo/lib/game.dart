@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class Game extends StatefulWidget {
   @override
@@ -6,10 +7,35 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {
+  var _gameSituation = 'Escolha uma das opções abaixo:';
   var _randomImg = AssetImage('images/padrao.png');
 
-  _selectOption(String choice) {
-    print('User chose: $choice');
+  _selectOption(String playerChoice) {
+    var options = ['pedra', 'papel', 'tesoura'];
+    var appChoice = options[Random().nextInt(options.length)];
+
+    print('User chose: $playerChoice');
+    print('Computer chose: $appChoice');
+
+    setState(() {
+      this._randomImg = AssetImage('images/$appChoice.png');
+    });
+
+    if (appChoice == playerChoice) {
+      setState(() {
+        this._gameSituation = 'Empate!';
+      });
+    } else if (appChoice == 'papel' && playerChoice == 'pedra' ||
+        appChoice == 'pedra' && playerChoice == 'tesoura' ||
+        appChoice == 'tesoura' && playerChoice == 'papel') {
+      setState(() {
+        this._gameSituation = 'Você perdeu!';
+      });
+    } else {
+      setState(() {
+        this._gameSituation = 'Você ganhou!';
+      });
+    }
   }
 
   @override
@@ -37,7 +63,7 @@ class _GameState extends State<Game> {
             Padding(
               padding: EdgeInsets.only(top: 32, bottom: 16),
               child: Text(
-                'Escolha uma das opções abaixo:',
+                this._gameSituation,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
