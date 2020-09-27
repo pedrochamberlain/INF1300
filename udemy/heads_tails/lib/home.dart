@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:heads_tails/result.dart';
+import 'dart:math';
 
 class Home extends StatefulWidget {
   @override
@@ -6,7 +8,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  void _accessResult() {}
+  void _accessResult() {
+    var possibleResults = ['cara', 'coroa'];
+    var randInt = Random().nextInt(possibleResults.length);
+    var result = possibleResults[randInt];
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Result(result),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +32,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Image.asset('images/logo.png'),
             GestureDetector(
-              onTap: () => this._accessResult,
+              onTap: this._accessResult,
               child: Image.asset('images/botao_jogar.png'),
             )
           ],
