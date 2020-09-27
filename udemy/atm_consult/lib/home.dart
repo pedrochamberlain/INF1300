@@ -1,18 +1,51 @@
 import 'package:flutter/material.dart';
 
+import 'package:atm_consult/cliente.dart';
+import 'package:atm_consult/contato.dart';
+import 'package:atm_consult/empresa.dart';
+import 'package:atm_consult/servico.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  void _accessEmpresa() {}
+  void _accessEmpresa() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Empresa(),
+      ),
+    );
+  }
 
-  void _accessServico() {}
+  void _accessServico() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Servico(),
+      ),
+    );
+  }
 
-  void _accessCliente() {}
+  void _accessCliente() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Cliente(),
+      ),
+    );
+  }
 
-  void _accessContato() {}
+  void _accessContato() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Contato(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
