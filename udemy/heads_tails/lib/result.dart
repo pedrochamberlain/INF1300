@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
-class Result extends StatefulWidget {
-  final String result;
-
-  Result(this.result);
-
-  @override
-  _ResultState createState() => _ResultState();
-}
-
-class _ResultState extends State<Result> {
-  void _returnHome() {
-    Navigator.pop(context);
-  }
-
+class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var possibleResults = ['cara', 'coroa'];
+    var randInt = Random().nextInt(possibleResults.length);
+    var result = possibleResults[randInt];
+
     return Scaffold(
       backgroundColor: Color(0xff61bd86),
       body: Container(
@@ -23,9 +15,9 @@ class _ResultState extends State<Result> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image.asset('images/moeda_${widget.result}.png'),
+            Image.asset('images/moeda_$result.png'),
             GestureDetector(
-              onTap: this._returnHome,
+              onTap: () => Navigator.pop(context),
               child: Image.asset('images/botao_voltar.png'),
             )
           ],

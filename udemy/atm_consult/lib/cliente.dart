@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Cliente extends StatefulWidget {
-  @override
-  _ClienteState createState() => _ClienteState();
-}
-
-class _ClienteState extends State<Cliente> {
+class Cliente extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

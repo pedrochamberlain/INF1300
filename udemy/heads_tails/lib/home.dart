@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heads_tails/result.dart';
-import 'dart:math';
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  void _accessResult() {
-    var possibleResults = ['cara', 'coroa'];
-    var randInt = Random().nextInt(possibleResults.length);
-    var result = possibleResults[randInt];
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => Result(result),
-      ),
-    );
-  }
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +13,12 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Image.asset('images/logo.png'),
             GestureDetector(
-              onTap: this._accessResult,
+              onTap: () => {
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Result(),
+                )
+              },
               child: Image.asset('images/botao_jogar.png'),
             )
           ],

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Servico extends StatefulWidget {
-  @override
-  _ServicoState createState() => _ServicoState();
-}
-
-class _ServicoState extends State<Servico> {
+class Servico extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
