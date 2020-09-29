@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert'; // for json.decode
 
 class Home extends StatefulWidget {
   @override
@@ -7,6 +10,14 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String _price = '0';
+
+  void _getBitcoinPrice() async {
+    String url = 'http://blockchain.info/ticker';
+    http.Response siteResponse = await http.get(url);
+
+    Map<String, dynamic> mappedResponse = json.decode(siteResponse.body);
+    setState(() => {_price = mappedResponse['BRL']['buy'].toString()});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +39,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               RaisedButton(
-                onPressed: () => {},
+                onPressed: _getBitcoinPrice,
                 color: Colors.orange,
                 child: Text(
                   "Atualizar",
