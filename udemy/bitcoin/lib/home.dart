@@ -9,14 +9,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String _price = '0';
+  String _result = '';
 
-  void _getBitcoinPrice() async {
+  Future<Map> _getBitcoinPrice() async {
     String url = 'http://blockchain.info/ticker';
     http.Response siteResponse = await http.get(url);
-
     Map<String, dynamic> mappedResponse = json.decode(siteResponse.body);
-    setState(() => {_price = mappedResponse['BRL']['buy'].toString()});
+    return mappedResponse;
   }
 
   @override
@@ -31,24 +30,32 @@ class _HomeState extends State<Home> {
               Image.asset('images/logo.png'),
               Padding(
                 padding: EdgeInsets.only(top: 30, bottom: 30),
-                child: Text(
-                  'R\$ $_price',
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),
+                child: FutureBuilder<Map>(
+                  future: _getBitcoinPrice(),
+                  builder: (context, snapshot) {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.none: // unused
+                      case ConnectionState.active: //unused
+                      case ConnectionState.waiting:
+                        print('Waiting for Connection');
+                        _result = 'Loading...';
+                        break;
+                      case ConnectionState.done:
+                        print('Connection Done');
+                        snapshot.hasError
+                            ? _result = 'API failed.'
+                            : _result = "R\$ ${snapshot.data['BRL']['buy']}";
+                        break;
+                    }
+
+                    return Text(
+                      '$_result',
+                      style: TextStyle(
+                        fontSize: 32,
+                      ),
+                    );
+                  },
                 ),
-              ),
-              RaisedButton(
-                onPressed: _getBitcoinPrice,
-                color: Colors.orange,
-                child: Text(
-                  "Atualizar",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
               )
             ],
           ),
