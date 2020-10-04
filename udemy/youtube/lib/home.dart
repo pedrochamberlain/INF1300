@@ -6,6 +6,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
+  List<Widget> views = [
+    Text('Início'),
+    Text('Em alta'),
+    Text('Inscrições'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +43,28 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: Container(),
+      body: views[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.red,
+        currentIndex: _currentIndex,
+        onTap: (index) => {
+          setState(() => {_currentIndex = index})
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.whatshot),
+            title: Text('Trending'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.subscriptions),
+            title: Text('Subscriptions'),
+          ),
+        ],
+      ),
     );
   }
 }
