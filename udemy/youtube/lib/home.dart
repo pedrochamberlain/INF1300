@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:youtube/views/homepage.dart';
+import 'package:youtube/views/subscriptions.dart';
+import 'package:youtube/views/trending.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,9 +12,9 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
 
   List<Widget> views = [
-    Text('Início'),
-    Text('Em alta'),
-    Text('Inscrições'),
+    Homepage(),
+    Trending(),
+    Subscriptions(),
   ];
 
   @override
