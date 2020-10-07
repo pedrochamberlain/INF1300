@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nuance/mediascroller.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,135 +13,53 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.deepPurple,
         bottomNavigationBar: BottomNavigationBar(
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.mood), label: 'Mood')
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.mood),
+              label: 'Mood',
+            )
           ],
         ),
         body: SizedBox(
-          height: double.infinity,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.yellow,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.red,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.pink,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              Padding(padding: EdgeInsets.only(top: 35.0)),
+              Text(
+                'Meditação',
+                style: TextStyle(
+                    color: Colors.white,
+                    background: Paint()
+                      ..strokeWidth = 12.0
+                      ..color = Color.fromRGBO(0, 0, 0, 0.3)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round),
               ),
-              Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.yellow,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.red,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.pink,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              MediaScroller(),
+              Text(
+                'Vídeos',
+                style: TextStyle(
+                    color: Colors.white,
+                    background: Paint()
+                      ..strokeWidth = 12.0
+                      ..color = Color.fromRGBO(0, 0, 0, 0.3)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round),
               ),
-              Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.yellow,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.red,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.pink,
-                        child: Container(
-                          width: 200,
-                          height: 80,
-                          child: Text('TEXTO'),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              MediaScroller(),
+              Text(
+                'Artigos',
+                style: TextStyle(
+                    color: Colors.white,
+                    background: Paint()
+                      ..strokeWidth = 12.0
+                      ..color = Color.fromRGBO(0, 0, 0, 0.3)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round),
+              ),
+              MediaScroller(),
             ],
           ),
         ));
