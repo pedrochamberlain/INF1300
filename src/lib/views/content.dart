@@ -23,7 +23,7 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(),
+          MediaScroller(type: 'med'),
           Text(
             'Vídeos',
             style: TextStyle(
@@ -34,7 +34,7 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(),
+          MediaScroller(type: 'vid'),
           Text(
             'Artigos',
             style: TextStyle(
@@ -45,7 +45,7 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(),
+          MediaScroller(type: 'art'),
         ],
       ),
     );

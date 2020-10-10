@@ -8,6 +8,9 @@ class MoodJournal extends StatefulWidget {
 class _MoodJournalState extends State<MoodJournal> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("HOW ARE YOU FEELING TODAY"));
+    return Center(
+        child: Container(
+      child: Text("HOW ARE YOU FEELING TODAY"),
+    ));
   }
 }
