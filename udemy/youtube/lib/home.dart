@@ -46,7 +46,10 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: views[_currentIndex],
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: views[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.red,
         currentIndex: _currentIndex,

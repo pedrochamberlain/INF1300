@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube/api.dart';
+import 'package:youtube/model/video.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -7,20 +8,62 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  _listVideos() {
+    API api = API();
+    return api.search("");
+  }
+
   @override
   Widget build(BuildContext context) {
-    API api = API();
-    api.search("Jean-Marie Straub");
+    return FutureBuilder<List<Video>>(
+      future: _listVideos(),
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.none:
+          case ConnectionState.waiting:
+            return Center(
+              child: CircularProgressIndicator(),
+            );
 
-    return Container(
-      child: Center(
-        child: Text(
-          'Homepage',
-          style: TextStyle(
-            fontSize: 50,
-          ),
-        ),
-      ),
+          case ConnectionState.active:
+          case ConnectionState.done:
+            if (snapshot.hasData) {
+              return ListView.separated(
+                itemBuilder: (context, index) {
+                  Video video = snapshot.data[index];
+
+                  return Column(children: <Widget>[
+                    Container(
+                      height: 185,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(video.img),
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(video.title),
+                      subtitle: Text(video.channel),
+                    ),
+                  ]);
+                },
+                separatorBuilder: (context, index) => Divider(
+                  height: 3,
+                  color: Colors.grey,
+                ),
+                itemCount: snapshot.data.length,
+              );
+            } else {
+              return Center(
+                child: Text(
+                  "No videos were found.",
+                  style: TextStyle(fontSize: 24),
+                ),
+              );
+            }
+        }
+      },
     );
   }
 }

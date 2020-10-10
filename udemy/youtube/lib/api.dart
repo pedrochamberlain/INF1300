@@ -8,7 +8,9 @@ const CHANNEL_ID = "UCU9Goiior2gkR8q7Q98Qgbg";
 const BASE_URL = "https://www.googleapis.com/youtube/v3/search";
 
 class API {
-  search(String query) async {
+  Future<List<Video>> search(String query) async {
+    List<Video> videos;
+
     http.Response response = await http.get(
       BASE_URL +
           "?part=snippet" +
@@ -23,13 +25,11 @@ class API {
     if (response.statusCode == 200) {
       Map<String, dynamic> responseData = json.decode(response.body);
 
-      List<Video> videos = responseData["items"].map<Video>((map) {
+      videos = responseData["items"].map<Video>((map) {
         return Video.fromJson(map);
       }).toList();
-
-      for (var video in videos) {
-        print(video.title);
-      }
     }
+
+    return videos;
   }
 }
