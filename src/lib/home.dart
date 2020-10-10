@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nuance/content.dart';
 import 'package:nuance/mediascroller.dart';
+import 'package:nuance/moodjournal.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,14 +9,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _bottomIndex = 0;
+  List<Widget> _screens = [
+    Content(),
+    MoodJournal(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.deepPurple,
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _bottomIndex,
+          onTap: (index) {
+            setState(() {
+              _bottomIndex = index;
+            });
+          },
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.bedtime),
               label: 'Home',
             ),
             BottomNavigationBarItem(
@@ -23,45 +37,6 @@ class _HomeState extends State<Home> {
             )
           ],
         ),
-        body: SizedBox(
-          child: Column(
-            children: [
-              Padding(padding: EdgeInsets.only(top: 35.0)),
-              Text(
-                'Meditação',
-                style: TextStyle(
-                    color: Colors.white,
-                    background: Paint()
-                      ..strokeWidth = 12.0
-                      ..color = Color.fromRGBO(0, 0, 0, 0.3)
-                      ..style = PaintingStyle.stroke
-                      ..strokeJoin = StrokeJoin.round),
-              ),
-              MediaScroller(),
-              Text(
-                'Vídeos',
-                style: TextStyle(
-                    color: Colors.white,
-                    background: Paint()
-                      ..strokeWidth = 12.0
-                      ..color = Color.fromRGBO(0, 0, 0, 0.3)
-                      ..style = PaintingStyle.stroke
-                      ..strokeJoin = StrokeJoin.round),
-              ),
-              MediaScroller(),
-              Text(
-                'Artigos',
-                style: TextStyle(
-                    color: Colors.white,
-                    background: Paint()
-                      ..strokeWidth = 12.0
-                      ..color = Color.fromRGBO(0, 0, 0, 0.3)
-                      ..style = PaintingStyle.stroke
-                      ..strokeJoin = StrokeJoin.round),
-              ),
-              MediaScroller(),
-            ],
-          ),
-        ));
+        body: _screens[_bottomIndex]);
   }
 }
