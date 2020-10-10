@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nuance/content.dart';
-import 'package:nuance/mediascroller.dart';
-import 'package:nuance/moodjournal.dart';
+import 'package:nuance/views/content.dart';
+import 'package:nuance/views/moodjournal.dart';
 
 class Home extends StatefulWidget {
   @override

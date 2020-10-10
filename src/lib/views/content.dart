@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuance/mediascroller.dart';
+import 'package:nuance/widgets/mediascroller.dart';
 
 class Content extends StatefulWidget {
   @override
