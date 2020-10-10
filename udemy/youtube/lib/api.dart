@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:youtube/model/video.dart';
 
-const YOUTUBE_API_KEY = "AIzaSyBukn4ei_b-UE9l_s0d-Q3NBXSqvfPx3xI";
+const YOUTUBE_API_KEY = "AIzaSyBMMq3vt_4KMnKId3yydOgjjwSLgH_MKz0";
 const CHANNEL_ID = "UCU9Goiior2gkR8q7Q98Qgbg";
 const BASE_URL = "https://www.googleapis.com/youtube/v3/search";
 
@@ -18,7 +18,7 @@ class API {
           "&maxResults=20" +
           "&order=date" +
           "&key=$YOUTUBE_API_KEY" +
-          "&channelId=$CHANNEL_ID" +
+          // "&channelId=$CHANNEL_ID" +
           "&q=$query",
     );
 
