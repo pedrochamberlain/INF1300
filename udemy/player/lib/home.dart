@@ -7,16 +7,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  bool firstPlay = true;
   AudioPlayer player = AudioPlayer();
+
+  bool _firstPlay = true;
+  double _volume = 0.5;
 
   _play() async {
     String url =
         "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
 
-    if (firstPlay) {
+    if (_firstPlay) {
       await player.play(url);
-      firstPlay = false;
+      _firstPlay = false;
     } else {
       player.resume();
     }
@@ -34,8 +36,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          // TODO: Slider
+          Slider(
+            min: 0,
+            max: 1,
+            value: this._volume,
+            onChanged: (newValue) {
+              setState(() => this._volume = newValue);
+              player.setVolume(_volume);
+            },
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
