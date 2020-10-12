@@ -45,7 +45,7 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(type: 'art'),
+          MediaScroller(type: 'txt'),
         ],
       ),
     );
