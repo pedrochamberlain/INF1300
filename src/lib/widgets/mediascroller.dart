@@ -3,21 +3,62 @@ import 'package:flutter_youtube/flutter_youtube.dart';
 import 'package:nuance/models/video.dart';
 import 'package:nuance/utils/api.dart';
 
+/*<Functions for videoScroller>*/
+Future<List<Video>> _listVideos() {
+  API api = API();
+  return api.youtubeSearch("saúde mental");
+}
+
+Widget _videoBuilder(snapshot, index) {
+  Video video = snapshot.data[index];
+
+  return GestureDetector(
+    onTap: () => {
+      FlutterYoutube.playYoutubeVideoById(
+        apiKey: YOUTUBE_API_KEY,
+        videoId: video.id,
+        autoPlay: true,
+        fullScreen: true,
+      )
+    },
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
+      child: Card(
+        color: Colors.yellow,
+        child: Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: NetworkImage(video.img),
+            ),
+          ),
+          child: Text(video.title),
+        ),
+      ),
+    ),
+  );
+}
+/*<\Functions for videoScroller>*/
+
 class MediaScroller extends StatelessWidget {
-  final String type;
+  final Future<dynamic> Function() futureGetter;
 
-  const MediaScroller({Key key, @required this.type}) : super(key: key);
+  final Widget Function(dynamic, int) builder;
 
-  _listVideos() {
-    API api = API();
-    return api.youtubeSearch("saúde mental");
-  }
+  const MediaScroller(
+      {Key key, @required this.futureGetter, @required this.builder})
+      : super(key: key);
+
+  MediaScroller.videoScroller()
+      : futureGetter = _listVideos,
+        builder = _videoBuilder;
 
   @override
   Widget build(BuildContext context) {
-    if (type == 'vid') {
-      return FutureBuilder<List<Video>>(
-        future: _listVideos(),
+    return FutureBuilder<dynamic>(
+        future: futureGetter(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
@@ -36,54 +77,23 @@ class MediaScroller extends StatelessWidget {
               if (snapshot.hasData) {
                 return Container(
                   child: Expanded(
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        Video video = snapshot.data[index];
-
-                        return GestureDetector(
-                          onTap: () => {
-                            FlutterYoutube.playYoutubeVideoById(
-                              apiKey: YOUTUBE_API_KEY,
-                              videoId: video.id,
-                              autoPlay: true,
-                              fullScreen: true,
-                            )
-                          },
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
-                            child: Card(
-                              color: Colors.yellow,
-                              child: Container(
-                                height: 150,
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: NetworkImage(video.img),
-                                  ),
-                                ),
-                                child: Text(video.title),
+                      child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          separatorBuilder: (context, index) => Divider(
+                                height: 0,
+                                color: Colors.transparent,
                               ),
-                            ),
-                          ),
-                        );
-                      },
-                      separatorBuilder: (context, index) => Divider(
-                        height: 0,
-                        color: Colors.transparent,
-                      ),
-                      itemCount: snapshot.data.length,
-                    ),
-                  ),
+                          itemCount: snapshot.data.length,
+                          itemBuilder: (context, index) {
+                            return builder(snapshot, index);
+                          })),
                 );
               } else {
                 return Container(
                   height: 150,
                   child: Center(
                     child: Text(
-                      "No videos were found.",
+                      "Content not found",
                       style: TextStyle(
                         fontSize: 16,
                       ),
@@ -92,48 +102,7 @@ class MediaScroller extends StatelessWidget {
                 );
               }
           }
-        },
-      );
-    } else {
-      return Container(
-        child: Expanded(
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
-                child: Card(
-                  color: Colors.yellow,
-                  child: Container(
-                    width: 150,
-                    child: Text('TEXTO'),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
-                child: Card(
-                  color: Colors.red,
-                  child: Container(
-                    width: 150,
-                    child: Text('TEXTO'),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
-                child: Card(
-                  color: Colors.pink,
-                  child: Container(
-                    width: 150,
-                    child: Text('TEXTO'),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    }
+          return Container();
+        });
   }
 }

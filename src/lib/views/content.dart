@@ -23,7 +23,11 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(type: 'med'),
+          MediaScroller(builder: (snapshot, index) {
+            return Container();
+          }, futureGetter: () {
+            return Future(() {});
+          }),
           Text(
             'Vídeos',
             style: TextStyle(
@@ -34,7 +38,7 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(type: 'vid'),
+          MediaScroller.videoScroller(),
           Text(
             'Artigos',
             style: TextStyle(
@@ -45,7 +49,11 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(type: 'art'),
+          MediaScroller(builder: (snapshot, index) {
+            return Container();
+          }, futureGetter: () {
+            return Future(() {});
+          }),
         ],
       ),
     );
