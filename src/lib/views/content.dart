@@ -49,11 +49,7 @@ class _ContentState extends State<Content> {
                   ..style = PaintingStyle.stroke
                   ..strokeJoin = StrokeJoin.round),
           ),
-          MediaScroller(builder: (snapshot, index) {
-            return Container();
-          }, futureGetter: () {
-            return Future(() {});
-          }),
+          MediaScroller.articleScroller(),
         ],
       ),
     );

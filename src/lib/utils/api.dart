@@ -1,12 +1,21 @@
 import 'package:http/http.dart' as http;
+import 'package:webfeed/webfeed.dart';
 import 'dart:convert';
 
 import 'package:nuance/models/video.dart';
+
+const RSS_URL = 'https://medium.com/feed/topic/health';
 
 const YOUTUBE_API_KEY = "AIzaSyBMMq3vt_4KMnKId3yydOgjjwSLgH_MKz0";
 const BASE_URL = "https://www.googleapis.com/youtube/v3/search";
 
 class API {
+  Future<List<RssItem>> getRssFeed() {
+    return http
+        .read(RSS_URL)
+        .then((xmlString) => RssFeed.parse(xmlString).items);
+  }
+
   Future<List<Video>> youtubeSearch(String query) async {
     List<Video> videoList;
 
@@ -28,7 +37,6 @@ class API {
         return Video.fromJson(map);
       }).toList();
     }
-
     return videoList;
   }
 }
