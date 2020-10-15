@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:nuance/models/audio.dart';
+import 'package:nuance/views/durationchoice.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/webfeed.dart';
 import 'package:flutter_youtube/flutter_youtube.dart';
@@ -11,7 +15,7 @@ Future<List<Video>> _listVideos() {
   return api.youtubeSearch("saúde mental");
 }
 
-Widget _videoBuilder(snapshot, index) {
+Widget _videoBuilder(context, snapshot, index) {
   Video video = snapshot.data[index];
 
   return GestureDetector(
@@ -50,7 +54,7 @@ Future<List<RssItem>> _listArticles() {
   return api.getRssFeed();
 }
 
-Widget _articleBuilder(snapshot, index) {
+Widget _articleBuilder(context, snapshot, index) {
   final article = snapshot.data[index];
 
   return GestureDetector(
@@ -85,10 +89,49 @@ Widget _articleBuilder(snapshot, index) {
 }
 /*<\Functions for articleScroller>*/
 
+/*<Functions for audioScroller>*/
+Future<List<Audio>> _listAudios() async {
+  return await Future(() => [Audio.foc(), Audio.med(), Audio.son()]);
+}
+
+Widget _audioBuilder(context, snapshot, index) {
+  Audio audio = snapshot.data[index];
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => DurationChoice(
+                  audio.shortUrl, audio.longUrl,
+                  infinity: audio.inf)));
+    },
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
+      child: Card(
+        color: Colors.purple[200],
+        child: Container(
+          height: 150,
+          width: 150,
+          child: Center(
+            child: Text(
+              audio.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+/*<\Functions for audioScroller>*/
+
 class MediaScroller extends StatelessWidget {
   final Future<dynamic> Function() futureGetter;
 
-  final Widget Function(dynamic, int) builder;
+  final Widget Function(dynamic, dynamic, int) builder;
 
   const MediaScroller(
       {Key key, @required this.futureGetter, @required this.builder})
@@ -101,6 +144,10 @@ class MediaScroller extends StatelessWidget {
   MediaScroller.articleScroller()
       : futureGetter = _listArticles,
         builder = _articleBuilder;
+
+  MediaScroller.audioScroller()
+      : futureGetter = _listAudios,
+        builder = _audioBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +178,7 @@ class MediaScroller extends StatelessWidget {
                             ),
                         itemCount: snapshot.data.length,
                         itemBuilder: (context, index) {
-                          return builder(snapshot, index);
+                          return builder(context, snapshot, index);
                         })),
               );
             } else {

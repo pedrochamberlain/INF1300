@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nuance/home.dart';
 import 'dart:async';
 
+import 'package:nuance/views/durationchoice.dart';
+
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
