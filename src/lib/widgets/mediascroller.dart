@@ -99,11 +99,12 @@ Widget _audioBuilder(context, snapshot, index) {
   return GestureDetector(
     onTap: () {
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => DurationChoice(
-                  audio.shortUrl, audio.longUrl,
-                  infinity: audio.inf)));
+        context,
+        MaterialPageRoute(
+          builder: (context) => DurationChoice(audio.shortUrl, audio.longUrl,
+              infinity: audio.inf),
+        ),
+      );
     },
     child: Padding(
       padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 16.0),
@@ -183,15 +184,16 @@ class MediaScroller extends StatelessWidget {
               );
             } else {
               return Container(
-                  height: 150,
-                  child: Center(
-                    child: Text(
-                      "Content not found",
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
+                height: 150,
+                child: Center(
+                  child: Text(
+                    "Content not found",
+                    style: TextStyle(
+                      fontSize: 16,
                     ),
-                  ));
+                  ),
+                ),
+              );
             }
         }
         return Container();
@@ -199,19 +201,3 @@ class MediaScroller extends StatelessWidget {
     );
   }
 }
-
-/*
-return Container(
-                    child: Expanded(
-                      child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) ,
-                        separatorBuilder: (context, index) => Divider(
-                          height: 0,
-                          color: Colors.transparent,
-                        ),
-                        itemCount: snapshot.data.items.length,
-                      ),
-                    ),
-                  );
-*/

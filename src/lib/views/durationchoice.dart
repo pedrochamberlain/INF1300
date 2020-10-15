@@ -55,27 +55,28 @@ class _DurationChoiceState extends State<DurationChoice> {
       ));
     }
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Escolha uma duração"),
+      appBar: AppBar(
+        title: Text("Escolha uma duração"),
+      ),
+      body: Container(
+        color: Colors.purple[50],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Tocar por:",
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: _buttons,
+            ),
+          ],
         ),
-        body: Container(
-          color: Colors.purple[50],
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "Tocar por:",
-                  style: TextStyle(fontSize: 25),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: _buttons,
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }
