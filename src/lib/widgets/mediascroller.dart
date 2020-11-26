@@ -120,7 +120,7 @@ Widget _audioBuilder(context, snapshot, index) {
               audio.title,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 50,
               ),
             ),
           ),
