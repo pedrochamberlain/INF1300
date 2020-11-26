@@ -1,0 +1,46 @@
+{
+    "articles": "Articles",
+    "@articles": {
+        "description": ""
+    },
+    "content_not_found": "Content Not Found",
+    "@content_not_found": {
+        "description": ""
+    },
+    "duration": "Audio duration",
+    "@duration": {
+        "description": ""
+    },
+    "feeling": "How are you feeling?",
+    "@feeling": {
+        "description": ""
+    },
+    "home": "Home",
+    "@home": {
+        "description": ""
+    },
+    "meditation": "Meditation",
+    "@meditation": {
+        "description": ""
+    },
+    "mental_health": "Mental Health",
+    "@mental_health": {
+        "description": ""
+    },
+    "minutes": "minutes",
+    "@minutes": {
+        "description": ""
+    },
+    "mood": "Mood",
+    "@mood": {
+        "description": ""
+    },
+    "play_for": "Play for:",
+    "@play_for": {
+        "description": ""
+    },
+    "videos": "Videos",
+    "@videos": {
+        "description": ""
+    }
+}
