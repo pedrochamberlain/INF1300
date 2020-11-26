@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MoodJournal extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _MoodJournalState extends State<MoodJournal> {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-      child: Text("HOW ARE YOU FEELING TODAY"),
+      child: Text(AppLocalizations.of(context).feeling),
     ));
   }
 }

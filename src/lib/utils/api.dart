@@ -1,6 +1,6 @@
+import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:webfeed/webfeed.dart';
-import 'dart:convert';
 
 import 'package:nuance/models/video.dart';
 
@@ -26,7 +26,6 @@ class API {
           "&maxResults=10" +
           "&order=date" +
           "&key=$YOUTUBE_API_KEY" +
-          // "&channelId=$CHANNEL_ID" +
           "&q=$query",
     );
 

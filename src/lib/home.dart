@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:nuance/views/content.dart';
 import 'package:nuance/views/moodjournal.dart';
 
@@ -28,11 +30,11 @@ class _HomeState extends State<Home> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.bedtime),
-              label: 'Home',
+              label: AppLocalizations.of(context).home,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.mood),
-              label: 'Mood',
+              label: AppLocalizations.of(context).mood,
             )
           ],
         ),

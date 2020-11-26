@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:nuance/widgets/mediascroller.dart';
 
 class Content extends StatefulWidget {
@@ -14,7 +16,7 @@ class _ContentState extends State<Content> {
         children: [
           Padding(padding: EdgeInsets.only(top: 35.0)),
           Text(
-            'Meditação',
+            AppLocalizations.of(context).meditation,
             style: TextStyle(
                 color: Colors.white,
                 background: Paint()
@@ -25,7 +27,7 @@ class _ContentState extends State<Content> {
           ),
           MediaScroller.audioScroller(),
           Text(
-            'Vídeos',
+            AppLocalizations.of(context).videos,
             style: TextStyle(
                 color: Colors.white,
                 background: Paint()
@@ -36,7 +38,7 @@ class _ContentState extends State<Content> {
           ),
           MediaScroller.videoScroller(),
           Text(
-            'Artigos',
+            AppLocalizations.of(context).articles,
             style: TextStyle(
                 color: Colors.white,
                 background: Paint()

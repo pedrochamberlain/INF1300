@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:nuance/home.dart';
 import 'dart:async';
 
-import 'package:nuance/views/durationchoice.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'package:nuance/home.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

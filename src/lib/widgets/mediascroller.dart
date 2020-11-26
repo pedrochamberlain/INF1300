@@ -1,13 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:nuance/models/audio.dart';
-import 'package:nuance/views/durationchoice.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_youtube/flutter_youtube.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/webfeed.dart';
-import 'package:flutter_youtube/flutter_youtube.dart';
-import 'package:nuance/models/video.dart';
+
 import 'package:nuance/utils/api.dart';
+import 'package:nuance/views/durationchoice.dart';
+import 'package:nuance/models/audio.dart';
+import 'package:nuance/models/video.dart';
 
 /*<Functions for videoScroller>*/
 Future<List<Video>> _listVideos() {
@@ -187,7 +189,7 @@ class MediaScroller extends StatelessWidget {
                 height: 150,
                 child: Center(
                   child: Text(
-                    "Content not found",
+                    AppLocalizations.of(context).content_not_found,
                     style: TextStyle(
                       fontSize: 16,
                     ),

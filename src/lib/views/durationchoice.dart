@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:nuance/views/audioscreen.dart';
 
 class DurationChoice extends StatefulWidget {
@@ -25,7 +27,7 @@ class _DurationChoiceState extends State<DurationChoice> {
             }));
           },
           child: Text(
-            '15 minutos',
+            '15 ' + AppLocalizations.of(context).minutes,
             style: TextStyle(color: Colors.black),
           )),
       RaisedButton(
@@ -36,7 +38,7 @@ class _DurationChoiceState extends State<DurationChoice> {
             }));
           },
           child: Text(
-            '30 minutos',
+            '30 ' + AppLocalizations.of(context).minutes,
             style: TextStyle(color: Colors.black),
           )),
     ];
@@ -56,7 +58,7 @@ class _DurationChoiceState extends State<DurationChoice> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Escolha uma duração"),
+        title: Text(AppLocalizations.of(context).duration),
       ),
       body: Container(
         color: Colors.purple[50],
@@ -66,7 +68,7 @@ class _DurationChoiceState extends State<DurationChoice> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Tocar por:",
+                AppLocalizations.of(context).play_for,
                 style: TextStyle(fontSize: 25),
               ),
             ),
