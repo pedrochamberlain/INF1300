@@ -10,3 +10,11 @@ O Nuancé é um aplicativo de meditação voltado para a prática do mindfulness
 Agora o aplicativo Nuancé funciona nativamente em espanhol, inglês e português.
 
 TODO: Adicionar GIF modificando línguas
+
+### 2. Notificações diárias como lembrete de uso
+
+### 3. Gerenciamento do estado global do app com BLOC
+
+### 4. Aviso pelo Player quando a bateria está abaixo de 20%
+
+### 5. Adição de uma introdução ao aplicativo com o [`intro_slider`](https://pub.dev/packages/intro_slider)
