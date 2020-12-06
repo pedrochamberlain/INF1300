@@ -42,5 +42,37 @@
     "videos": "Videos",
     "@videos": {
         "description": ""
+    },
+    "quarantine": "QUARANTINE",
+    "@quarantine": {
+        "description": ""
+    },
+    "quarantine_desc": "During this year, many of us have had the displeasure of being locked inside our own homes.",
+    "@quarantine_desc": {
+        "description": ""
+    },
+    "staying_calm": "STAYING CALM",
+    "@staying_calm": {
+        "description": ""
+    },
+    "staying_calm_desc": "Situations like these can take a toll on our mental health, but we can take these challenges on when we remain healthy and calm.",
+    "@staying_calm_desc": {
+        "description": ""
+    },
+    "healthy_mind": "HEALTHY MIND",
+    "@healthy_mind": {
+        "description": ""
+    },
+    "healthy_mind_desc": "With Nuancé, you'll find plenty of daily videos and article recommendations that'll teach you to take care of your mental health.",
+    "@healthy_mind_desc": {
+        "description": ""
+    },
+    "relaxing": "RELAXING",
+    "@relaxing": {
+        "description": ""
+    },
+    "relaxing_desc": "Along with that, we're sharing a range of audio materials intended for your relaxing needs. Guided meditation and sounds for deep sleeping are included.",
+    "@relaxing_desc": {
+        "description": ""
     }
 }

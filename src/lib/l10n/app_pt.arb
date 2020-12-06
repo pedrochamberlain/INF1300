@@ -9,5 +9,13 @@
     "minutes": "minutos",
     "mood": "Diário",
     "play_for": "Reproduzir por:",
-    "videos": "Vídeos"
+    "videos": "Vídeos",
+    "quarantine": "QUARENTENA",
+    "quarantine_desc": "Durante este ano, muitos de nós tivemos o desprazer de estarmos trancados dentro de nossas próprias casas.",
+    "staying_calm": "FIQUE CALMO",
+    "staying_calm_desc": "Situações como estas podem tomar um custo da nossa saúde mental, mas podemos enfrentar estes desafios quando nos mantemos calmos quanto a isso.",
+    "healthy_mind": "MENTE SAUDÁVEL",
+    "healthy_mind_desc": "Com Nuancé, você receberá vídeos e recomendações de artigos que lhe ensinarão a cuidar de sua saúde mental",
+    "relaxing": "RELAXANDO",
+    "relaxing_desc": "Além disso, estamos compartilhando uma série de áudios destinados às suas necessidades de relaxamento. Incluímos, por exemplo, meditação guiada e sons para o sono profundo"
 }

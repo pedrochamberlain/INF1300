@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:nuance/home.dart';
+import 'package:nuance/intro_slider.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -19,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => Home(),
+          builder: (context) => IntroScreen(),
         ),
       ),
     );
