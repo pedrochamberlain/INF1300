@@ -74,5 +74,17 @@
     "relaxing_desc": "Along with that, we're sharing a range of audio materials intended for your relaxing needs. Guided meditation and sounds for deep sleeping are included.",
     "@relaxing_desc": {
         "description": ""
+    },
+    "low_battery": "Low Battery!",
+    "@low_battery": {
+        "description": ""
+    },
+    "low_battery_desc": "Along with that, we're sharing a range of audio materials intended for your relaxing needs. Guided meditation and sounds for deep sleeping are included.",
+    "@low_battery_desc": {
+        "description": ""
+    },
+    "alarm": "Good morning! How about starting your day off with Nuancé?",
+    "@alarm": {
+        "description": ""
     }
 }
