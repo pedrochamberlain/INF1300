@@ -1,7 +1,11 @@
 PODS:
   - audioplayers (0.0.1):
     - Flutter
+  - battery (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
+  - flutter_local_notifications (0.0.1):
+    - Flutter
   - flutter_youtube (0.0.1):
     - Flutter
     - XCDYouTubeKit
@@ -13,7 +17,9 @@ PODS:
 
 DEPENDENCIES:
   - audioplayers (from `.symlinks/plugins/audioplayers/ios`)
+  - battery (from `.symlinks/plugins/battery/ios`)
   - Flutter (from `Flutter`)
+  - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_youtube (from `.symlinks/plugins/flutter_youtube/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
@@ -25,8 +31,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   audioplayers:
     :path: ".symlinks/plugins/audioplayers/ios"
+  battery:
+    :path: ".symlinks/plugins/battery/ios"
   Flutter:
     :path: Flutter
+  flutter_local_notifications:
+    :path: ".symlinks/plugins/flutter_local_notifications/ios"
   flutter_youtube:
     :path: ".symlinks/plugins/flutter_youtube/ios"
   path_provider:
@@ -36,7 +46,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   audioplayers: 53f0f30789b10ab2009771c6c79def00980945e4
+  battery: 6b19dafdbba590f03b1f0cd2f1224e3ffedadbe6
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_youtube: 142f8d5af0a11963bdc73e13bcae6eb78db746c2
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
