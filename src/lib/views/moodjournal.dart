@@ -44,7 +44,7 @@ class _MoodJournalState extends State<MoodJournal> {
             onPressed: () {
               newEntry(context);
             },
-            child: Text("newEntry"),
+            child: Text("+"),
           ),
         )
       ],
@@ -70,7 +70,7 @@ class _MoodJournalState extends State<MoodJournal> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Cancelar"),
+              child: Text("👎"),
             ),
             FlatButton(
               onPressed: () {
@@ -86,7 +86,7 @@ class _MoodJournalState extends State<MoodJournal> {
                   },
                 );
               },
-              child: Text("Confirmar"),
+              child: Text("👍"),
             )
           ],
         );
