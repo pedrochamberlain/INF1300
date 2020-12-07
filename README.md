@@ -30,7 +30,12 @@ Diariamente, às 9 da manhã, o Nuancé exibe uma notificação que serve como u
   <img src="https://i.imgur.com/NWgOgj0.png" width=250/>
 </p>
 
-### 3. Gerenciamento do estado global do app com MobX
+### 3. Diário emocional e gerenciamento dos estados com MobX
+<p align="center">
+  <img src="https://i.imgur.com/mglAmJL.png" width=250/>
+  <img src="https://i.imgur.com/jQlo0Ab.png" width=250/>
+</p>
+
 Aplicação:
 <p align="center">
   <img src="https://i.imgur.com/FAA7fWw.png"/>
