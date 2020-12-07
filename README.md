@@ -38,7 +38,7 @@ Aplicação:
 
 Parcela do código gerado:
 <p align="center">
-  <img src="https://i.imgur.com/LaIE8d4.png"/>
+  <img src="https://i.imgur.com/LaIE8d4.png"  width=500/>
 </p>
 
 ### 4. Aviso pelo Player quando a bateria está abaixo de 20%
