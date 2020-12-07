@@ -17,7 +17,20 @@ class IntroScreenState extends State {
   @override
   void initState() {
     super.initState();
+  }
 
+  void onDonePress() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Home(),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    slides = new List();
     slides.add(
       new Slide(
         title: AppLocalizations.of(context).quarantine,
@@ -50,19 +63,6 @@ class IntroScreenState extends State {
         backgroundColor: Colors.deepPurple[500],
       ),
     );
-  }
-
-  void onDonePress() {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => Home(),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return new IntroSlider(
       slides: this.slides,
       onDonePress: this.onDonePress,
