@@ -119,12 +119,11 @@ class _DurationChoiceState extends State<DurationChoice> {
         barrierDismissible: true,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Pouca bateria!'),
+            title: Text(AppLocalizations.of(context).low_battery),
             content: SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
-                  Text(
-                      'Certifique-se que seu momento de relaxamento não vai ser interrompido!'),
+                  Text(AppLocalizations.of(context).low_battery_desc),
                 ],
               ),
             ),

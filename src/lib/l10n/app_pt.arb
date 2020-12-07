@@ -17,5 +17,7 @@
     "healthy_mind": "MENTE SAUDÁVEL",
     "healthy_mind_desc": "Com Nuancé, você receberá vídeos e recomendações de artigos que lhe ensinarão a cuidar de sua saúde mental",
     "relaxing": "RELAXANDO",
-    "relaxing_desc": "Além disso, estamos compartilhando uma série de áudios destinados às suas necessidades de relaxamento. Incluímos, por exemplo, meditação guiada e sons para o sono profundo"
+    "relaxing_desc": "Além disso, estamos compartilhando uma série de áudios destinados às suas necessidades de relaxamento. Incluímos, por exemplo, meditação guiada e sons para o sono profundo",
+    "low_battery": "Pouca bateria!",
+    "low_battery_desc": "Make sure that your moment of relaxation will not be interrupted!"
 }

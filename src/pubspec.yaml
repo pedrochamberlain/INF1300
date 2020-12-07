@@ -35,6 +35,7 @@ dependencies:
   audioplayers: ^0.16.1
   intro_slider: ^2.3.3
   battery: ^1.0.7
+  flutter_local_notifications: ^3.0.2
 
 dev_dependencies:
   flutter_test:
