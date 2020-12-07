@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:battery/battery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -15,6 +18,23 @@ class DurationChoice extends StatefulWidget {
 
 class _DurationChoiceState extends State<DurationChoice> {
   List<Widget> _buttons;
+
+  Battery _battery = Battery();
+  BatteryState _batteryState;
+
+  StreamSubscription<BatteryState> _batteryStateSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _batteryStateSubscription =
+        _battery.onBatteryStateChanged.listen((BatteryState state) {
+      setState(() {
+        _batteryState = state;
+      });
+    });
+    Future.delayed(Duration.zero, () => _showLowBatteryDialog(context));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +76,7 @@ class _DurationChoiceState extends State<DurationChoice> {
         ),
       ));
     }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).duration),
@@ -80,5 +101,46 @@ class _DurationChoiceState extends State<DurationChoice> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    if (_batteryStateSubscription != null) {
+      _batteryStateSubscription.cancel();
+    }
+  }
+
+  _showLowBatteryDialog(BuildContext context) async {
+    int batteryLevel = await _battery.batteryLevel;
+    if (batteryLevel <= 30 && _batteryState != BatteryState.charging) {
+      return showDialog<void>(
+        context: context,
+        barrierDismissible: true,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Pouca bateria!'),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  Text(
+                      'Certifique-se que seu momento de relaxamento não vai ser interrompido!'),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text('Ok'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      return null;
+    }
   }
 }
