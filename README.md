@@ -30,7 +30,7 @@ Diariamente, às 9 da manhã, o Nuancé exibe uma notificação que serve como u
   <img src="https://i.imgur.com/NWgOgj0.png" width=250/>
 </p>
 
-### 3. Gerenciamento do estado global do app com BLOC
+### 3. Gerenciamento do estado global do app com MobX
 Aplicação:
 <p align="center">
   <img src="https://i.imgur.com/FAA7fWw.png"/>
