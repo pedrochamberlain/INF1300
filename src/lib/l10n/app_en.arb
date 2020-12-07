@@ -15,6 +15,10 @@
     "@feeling": {
         "description": ""
     },
+    "feeling_desc": "Describe how you're feeling in one word.",
+    "@feeling_desc": {
+        "description": ""
+    },
     "home": "Home",
     "@home": {
         "description": ""

@@ -51,10 +51,10 @@ class _MoodJournalState extends State<MoodJournal> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Como está se sentindo hoje?"),
+            title: Text(AppLocalizations.of(context).feeling),
             content: TextField(
                 decoration: InputDecoration(
-                  labelText: "descreva em uma palavra como está se sentindo",
+                  labelText: AppLocalizations.of(context).feeling_desc,
                 ),
                 onChanged: (text) {
                   _text = text;
